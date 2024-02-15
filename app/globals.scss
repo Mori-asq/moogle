@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./colors";
+
+/* =================== START CSS RESET =================== */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  width: 100vw;
+  height: 100vh;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $scrollBar;
+  border-radius: 10rem;
+}
+
+/* =================== END CSS RESET =================== */
+
+/* =================== START PROJECT CSS  =================== */
+
+.centerRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centerCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainWrapper {
+  background-color: $white;
+  overflow-x: hidden;
+
+  .header,
+  .footer {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  .searchSection {
+    width: 80%;
+    height: 90vh;
+  }
+
+  .resultWrapper {
+    width: 100%;
+    min-height: 90vh;
+
+    .result {
+      font-family: arial, sans-serif;
+
+      &:hover {
+        box-shadow: 0px 4px 8px 4px $shadow;
+        -webkit-box-shadow: 0px 4px 8px 4px $shadow;
+        -moz-box-shadow: 0px 4px 8px 4px $shadow;
+      }
+
+      .rank {
+        color: $rank;
+      }
+
+      .titleWrapper {
+        min-height: 8rem;
+        .title {
+          color: $secondary;
+        }
+
+        .description {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .mainWrapper {
+    .header {
+      font-size: 1rem;
+    }
+
+    .footer {
+      font-size: 0.8rem;
+    }
+
+    .searchSection {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 301px) and (max-width: 500px) {
+  .mainWrapper {
+    .header {
+      font-size: 1.5rem;
+    }
+
+    .footer {
+      font-size: 1rem;
+    }
+
+    .searchSection {
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 650px) {
+  .mainWrapper {
+    .footer {
+      font-size: 1.5rem;
+    }
+
+    .searchSection {
+      width: 95%;
+    }
+  }
+}
+
+@media (min-width: 651px) and (max-width: 1200px) {
+  .mainWrapper {
+    .searchSection {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* =================== END PROJECT CSS  =================== */

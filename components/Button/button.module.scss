@@ -1,0 +1,36 @@
+@import "../../app/colors";
+
+.searchBtnWrapper {
+  .searchBtn {
+    background-color: $primary;
+    color: $white;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .searchBtn {
+    width: 80%;
+  }
+}
+
+@media (min-width: 301px) and (max-width: 500px) {
+  .searchBtn {
+    width: 55%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 650px) {
+  .searchBtn {
+    width: 35%;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 1200px) {
+  .searchBtn {
+    width: 30%;
+  }
+}

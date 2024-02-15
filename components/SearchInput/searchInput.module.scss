@@ -1,0 +1,45 @@
+@import "../../app/colors";
+
+.searchBarWrapper {
+  border: 2px solid $primary;
+
+  &:hover {
+    box-shadow: 0px 4px 8px 4px $shadow;
+    -webkit-box-shadow: 0px 4px 8px 4px $shadow;
+    -moz-box-shadow: 0px 4px 8px 4px $shadow;
+  }
+
+  .searchInput {
+    border-radius: 0.5rem;
+    color: $secondary;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .serachIconWrapper {
+    .serachIcon {
+      aspect-ratio: 1/1;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .searchBarWrapper {
+    .serachIconWrapper {
+      .serachIcon {
+        width: 1.8rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 501px) and (max-width: 550px) {
+  .searchBarWrapper {
+    .serachIconWrapper {
+      .serachIcon {
+        width: 2rem;
+      }
+    }
+  }
+}

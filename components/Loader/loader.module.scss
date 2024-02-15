@@ -1,0 +1,66 @@
+@import "../../app/colors";
+
+.pageLoader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1001;
+  display: flex;
+  background-color: $white;
+}
+
+.pageLoader.fade-out {
+  opacity: 0;
+  transition: all 2s ease;
+}
+
+.pageLoader div {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 10%;
+  border: 4px solid $primary;
+  position: relative;
+  animation: loader 2s linear infinite;
+}
+
+.pageLoader div::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: $primary;
+  left: 0;
+  top: 0;
+  animation: loaderIn 1s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25%,
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loaderIn {
+  0%,
+  25%,
+  100% {
+    height: 0%;
+  }
+  50%,
+  75% {
+    height: 100%;
+  }
+}
