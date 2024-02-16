@@ -5,10 +5,8 @@ import Loader from "@/components/Loader/Loader";
 import SearchInput from "@/components/SearchInput/SearchInput";
 
 interface ApiProps {
-  userId: number;
   id: number;
-  title: string;
-  body: string;
+  score: number;
 }
 
 const SearchResult = () => {
@@ -59,8 +57,8 @@ const SearchResult = () => {
                 #{result.id}
               </div>
               <div className="titleWrapper w-[100%] mt-4">
-                <div className="title mb-4 text-[1.5rem]">{result.title}</div>
-                <div className="description text-[1rem]">{result.body}</div>
+                <div className="title mb-4 text-[1.5rem]">{result.score}</div>
+                {/* <div className="description text-[1rem]">{result.title}</div> */}
               </div>
             </div>
           );
