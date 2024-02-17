@@ -25,7 +25,7 @@ const SearchResult = () => {
     const response = await fetch(endPoint, {
       method: "GET",
       mode: "no-cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         "Content-Type": "application/json",
@@ -36,6 +36,7 @@ const SearchResult = () => {
     });
     if (response.ok) {
       const finalResult = await response.json();
+      console.log(finalResult);
       setRankedResults(finalResult);
     }
     setLoading(false);
