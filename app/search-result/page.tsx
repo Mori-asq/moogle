@@ -7,12 +7,13 @@ import SearchInput from "@/components/SearchInput/SearchInput";
 interface ApiProps {
   id: number;
   score: number;
+  document_text: string;
 }
 
 const SearchResult = () => {
   const params = useSearchParams();
   const query = params.get("query");
-  const endPoint = `http://127.0.0.1:8000/search/${query}`; //original api
+  const endPoint = `http://127.0.0.1:8000/search/?query=${query}`; //original api
   // const endPoint = `https://jsonplaceholder.typicode.com/${query}`; // fake api
 
   const [rankedResults, setRankedResults] = useState<ApiProps[] | undefined>();
@@ -22,7 +23,7 @@ const SearchResult = () => {
   const FETCH_API = async (endPoint: string) => {
     setRankedResults(undefined);
     const response = await fetch(endPoint, {
-      method: "GET", 
+      method: "GET",
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
@@ -68,8 +69,12 @@ const SearchResult = () => {
                 #{result.id}
               </div>
               <div className="titleWrapper w-[100%] mt-4">
-                <div className="title mb-4 text-[1.5rem]">{result.score}</div>
-                {/* <div className="description text-[1rem]">{result.title}</div> */}
+                <div className="title mb-4 text-[1.5rem]">
+                  Score: {result.score}
+                </div>
+                <div className="description text-[1rem]">
+                  {result.document_text}
+                </div>
               </div>
             </div>
           );
